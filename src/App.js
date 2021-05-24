@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from "./component/Navbar.jsx"
+import RightSecone from "./component/Rightsec.jsx"
+import Stepone from "./component/Stepone.jsx"
+import Dream from "./component/DreamJob.jsx"
+import Intrested from "./component/Intrested.jsx"
+import { Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<>
+<div className="container_div">
+<Nav/>
+<Switch>
+  <Route exact path="/" component={Stepone} />
+  <Route exact path="/career_path" component={RightSecone} />
+  <Route exact path="/dream" component={Dream} />
+  <Route exact path="/intrest" component={Intrested} />
+</Switch>
+</div>
+
+
+</>
   );
 }
 
